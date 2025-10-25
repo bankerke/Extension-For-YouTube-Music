@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Audio Tool (EQ & 8D)",
+  "version": "2.1",
+  "description": "A fully functional audio toolkit for YouTube with an Equalizer, 8D moving sound, Quality Simulation, and a Visualizer.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "action": {
+    "default_title": "YouTube Audio Tool",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

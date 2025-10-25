@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>YouTube Audio Tool</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>YT Audio Tool</h2>
+    <div class="control">
+        <label class="toggle-switch">
+            <strong>Extension Enabled</strong>
+            <input type="checkbox" id="extensionEnabled" />
+            <span class="slider"></span>
+        </label>
+    </div>
+    <hr>
+    <div id="main-controls" style="display: none;">
+        <div class="control-group">
+            <label class="group-title">Equalizer</label>
+            <div class="control">
+              <label>Bass <span id="bassVal">0 dB</span></label>
+              <input type="range" id="bassSlider" min="-12" max="12" step="1" value="0">
+            </div>
+            <div class="control">
+              <label>Mids <span id="midVal">0 dB</span></label>
+              <input type="range" id="midSlider" min="-12" max="12" step="1" value="0">
+            </div>
+            <div class="control">
+              <label>Treble <span id="trebleVal">0 dB</span></label>
+              <input type="range" id="trebleSlider" min="-12" max="12" step="1" value="0">
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="toggle-switch">
+                <strong>Audio Quality Simulation</strong>
+                <input type="checkbox" id="qualityEnabled" />
+                <span class="slider"></span>
+            </label>
+            <select id="qualityPresetSelect" disabled>
+                <option value="hd">720p+ (HD Audio)</option>
+                <option value="480p">480p (High)</option>
+                <option value="360p">360p (Medium)</option>
+                <option value="240p">240p (Medium-Low)</option>
+                <option value="180p">180p (Low)</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label class="toggle-switch">
+                <strong>Dimensional Audio</strong>
+                <input type="checkbox" id="dimensionalEnabled" />
+                <span class="slider"></span>
+            </label>
+            <fieldset class="radio-group" id="dimensional-group" disabled>
+                <label><input type="radio" name="dimensional" value="2d"> 2D</label>
+                <label><input type="radio" name="dimensional" value="3d"> 3D</label>
+                <label><input type="radio" name="dimensional" value="5d"> 5D</label>
+                <label><input type="radio" name="dimensional" value="8d"> 8D</label>
+            </fieldset>
+        </div>
+         <div class="toggles">
+          <label><input type="checkbox" id="visualizerCheckbox"> Visualizer</label>
+        </div>
+    </div>
+     <div id="status-message" style="display: none; text-align: center; padding: 10px;"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

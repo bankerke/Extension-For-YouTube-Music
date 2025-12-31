@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Audio Tool • Compact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Audio Tool</h1>
+      <label class="toggle-switch compact">
+        <input type="checkbox" id="extensionEnabled" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div id="main-controls" class="main" style="display:none;">
+      <section class="section">
+        <h3>Presets</h3>
+        <div class="preset-vertical">
+          <button class="preset-btn" data-preset="music">Music</button>
+          <button class="preset-btn" data-preset="game">Game</button>
+          <button class="preset-btn" data-preset="movie">Movie</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Creative</h3>
+        <div class="creative-row">
+          <button class="creative-btn" data-preset="pop">Pop</button>
+          <button class="creative-btn" data-preset="jazz">Jazz</button>
+          <button class="creative-btn" data-preset="rock">Rock</button>
+          <button class="creative-btn" data-preset="melody">Melody</button>
+        </div>
+      </section>
+
+      <section class="section">
+        <h3>Dimensional</h3>
+        <div id="dim-buttons" class="dim-buttons"></div>
+        <label class="dim-toggle"><input type="checkbox" id="dimEnabled"> Enable</label>
+      </section>
+
+      <section class="section">
+        <h3>Equalizer</h3>
+        <div class="eq-row">
+          <label>Bass <span id="bassVal">0 dB</span></label>
+          <input id="bassSlider" type="range" min="-12" max="12" step="1" value="0" />
+        </div>
+        <div class="eq-row">
+          <label>Mids <span id="midVal">0 dB</span></label>
+          <input id="midSlider" type="range" min="-12" max="12" step="1" value="0" />
+        </div>
+        <div class="eq-row">
+          <label>Treble <span id="trebleVal">0 dB</span></label>
+          <input id="trebleSlider" type="range" min="-12" max="12" step="1" value="0" />
+        </div>
+      </section>
+    </div>
+
+    <div id="status-message" class="status" style="display:none;"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
